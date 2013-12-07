@@ -3,6 +3,8 @@ skipit
 
 A spotify app to automatically skip songs according to customisable criteria. e.g. skip songs with explicit lyrics when there are children in the room
 
+Currently only supports skipping songs with explicit lyrics.
+
 ## Installation
 
  1. Sign up for a [developer account on Spotify](https://developer.spotify.com/technologies/apps/#developer) by logging in and agreeing to the [terms of use](https://developer.spotify.com/technologies/apps/terms-of-use/).

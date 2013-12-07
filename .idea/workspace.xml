@@ -10,7 +10,7 @@
     <file path="/index.html" changelist="b4424bd1-4967-4c12-8ebf-615a82bfc232" time="1386452903375" ignored="false" />
     <file path="/main.css" changelist="b4424bd1-4967-4c12-8ebf-615a82bfc232" time="1386453016356" ignored="false" />
     <file path="/skipit.js" changelist="b4424bd1-4967-4c12-8ebf-615a82bfc232" time="1386452935362" ignored="false" />
-    <file path="/README.md" changelist="b4424bd1-4967-4c12-8ebf-615a82bfc232" time="1386453400985" ignored="false" />
+    <file path="/README.md" changelist="b4424bd1-4967-4c12-8ebf-615a82bfc232" time="1386453481669" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +60,7 @@
       <file leaf-file-name="README.md" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="110" selection-start="845" selection-end="845" vertical-scroll-proportion="0.23241955">
+            <state line="5" column="60" selection-start="227" selection-end="227" vertical-scroll-proportion="0.08939213">
               <folding />
             </state>
           </provider>
@@ -349,7 +349,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="110" selection-start="845" selection-end="845" vertical-scroll-proportion="0.23241955">
+        <state line="5" column="60" selection-start="227" selection-end="227" vertical-scroll-proportion="0.08939213">
           <folding />
         </state>
       </provider>
