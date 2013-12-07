@@ -1,0 +1,30 @@
+{
+    "AppDescription": {
+    "en": "An app to automatically skip songs in the current playlist based on a configurable set of criteria"
+},
+    "AppIcon": {
+    "36x18": "tutorial.png"
+},
+    "AppName": {
+    "en": "Skipit"
+},
+    "BundleIdentifier": "skipit",
+    "BundleType": "Application",
+    "BundleVersion": "0.0.1",
+    "DefaultTabs": [
+    {
+        "arguments": "index",
+        "title": {
+            "en": "Home"
+        }
+    }
+],
+    "Dependencies": {
+    "api": "1.0.0",
+    "views": "1.0.0"
+},
+    "RequiredInterface": 1,
+    "RequiredPermissions": [],
+    "SupportedLanguages": ["en"],
+    "VendorIdentifier": "jelfs"
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="$views/css/image.css">
+    <link rel="stylesheet" href="$views/css/list.css">
+    <link rel="stylesheet" href="$views/css/buttons.css">
+    <link rel="stylesheet" href="css/main.css">
+    <title></title>
+</head>
+<body>
+<div id="index">
+    <h1 class="header">Skipit</h1>
+    <p class="strap">
+        Automatically skip tracks that match criteria of your choice
+    </p>
+
+    <div class="content">
+        <fieldset>
+            <legend>Skip tracks which match ...</legend>
+
+            <ul>
+                <li>
+                    <input id="explicit" type="checkbox" />
+                    <label for="explicit">Explicit Language</label>
+                </li>
+            </ul>
+        </fieldset>
+
+        <p class="footnote">
+            * I'm going to add more criteria when I get time - filtering out sweariness was my main goal
+        </p>
+
+        <div class="trace">
+        </div>
+    </div>
+</div>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script src="/js/skipit.js"></script>
+</body>
+</html>
