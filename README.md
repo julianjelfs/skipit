@@ -13,3 +13,7 @@ Currently only supports skipping songs with explicit lyrics.
  4. Run `git clone https://github.com/julianjelfs/skipit.git skipit`.
  5. Download the [latest version of Spotify](http://spotify.com/download).
  6. Open Spotify and type "spotify:app:skipit" in the search bar (restart Spotify completely in case it doesn't find the App at first).
+
+### Note
+
+This is not foolproof at skipping sweary songs. It depends whether Spotify has characterised the song as explicit which is not 100% accurate. 
