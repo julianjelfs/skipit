@@ -1,6 +1,4 @@
-require([
-    '$api/models',
-], function(models) {
+require(['$api/models', 'js/genres'], function(models, genres) {
     'use strict';
 
     models.player.addEventListener('change', function(){
@@ -12,4 +10,7 @@ require([
         }
 
     });
+
+    alert(genres.list.length);
+
 });
