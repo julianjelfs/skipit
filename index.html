@@ -4,37 +4,44 @@
     <link rel="stylesheet" href="$views/css/image.css">
     <link rel="stylesheet" href="$views/css/list.css">
     <link rel="stylesheet" href="$views/css/buttons.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/main.css">
     <title></title>
 </head>
 <body>
-<div id="index">
+<div class="container" id="index" ng-app="SK" ng-controller="homeCtrl">
     <h1 class="header">Skipit</h1>
     <p class="strap">
-        Automatically skip tracks that match criteria of your choice
+        Automatically skip tracks that match ...
     </p>
 
-    <div class="content">
-        <fieldset>
-            <legend>Skip tracks which match ...</legend>
-
-            <ul>
-                <li>
-                    <input id="explicit" type="checkbox" />
+    <div>
+        <div class="well">
+            <form role="form">
+                <div class="form-group">
                     <label for="explicit">Explicit Language</label>
-                </li>
-            </ul>
-        </fieldset>
+                    <input class="checkbox-inline" ng-model='skipExplicit' id="explicit" type="checkbox" />
+                </div>
+                <div class="form-group">
+                    <label for="explicit">Artist Genres Includes</label>
+                    <input class="form-control" type="text" ng-model="genreFilter" />
+                    <span class="genre btn btn-sm btn-success" ng-show="genreFilter!=null && genreFilter.length>0" ng-repeat="g in filtered()">
+                        {{g}}
+                    </span>
+                </div>
+            </form>
+        </div>
 
         <p class="footnote">
             * I'm going to add more criteria when I get time - filtering out sweariness was my main goal
         </p>
 
-        <div class="trace">
+        <div>
+            <div ng-repeat="t in trace">{{t}}</div>
         </div>
     </div>
 </div>
-<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.4/angular.js"></script>
 <script src="/js/skipit.js"></script>
 </body>
 </html>

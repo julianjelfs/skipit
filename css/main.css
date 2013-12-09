@@ -1,3 +1,7 @@
+body {
+    background-color: #eeeeee;
+}
+
 label{
     font-size: 1.5em;
 }
@@ -49,3 +53,25 @@ legend {
     font-size: 1em;
 }
 
+.genre {
+    border:1px solid #ccc;
+    padding:5px;
+    display:inline-block;
+    margin: 10px 10px 0 0;
+    /*background-color: #96ff11;*/
+    border-radius: 3px;
+}
+
+.checkbox-inline {
+    width:25px;
+    height:25px;
+    margin-left:10px;
+}
+
+.genre .btn {
+    margin-left:5px;
+}
+
+.exclude {
+    margin-top:10px;
+}
