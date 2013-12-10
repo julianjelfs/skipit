@@ -75,3 +75,28 @@ legend {
 .exclude {
     margin-top:10px;
 }
+
+input[type="checkbox"] {
+    margin:-5px 5px 0 0;
+}
+
+#track-image {
+    width:300px;
+    height:300px;
+    margin-top: 20px;
+}
+
+.track-summary {
+    padding:10px;
+    font-size:1.6em;
+    font-weight: bold;
+    text-align: right;
+}
+
+.track-genres {
+    padding:10px;
+    font-style: italic;
+    font-size:1em;
+    font-weight: bold;
+    text-align: right;
+}

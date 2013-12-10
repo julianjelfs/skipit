@@ -1,9 +1,6 @@
 function homeCtrl($scope){
 
-    $scope.trace = [];
     $scope.skipExplicit = false;
-
-
 
     require(['$api/models', 'js/genres'], function(models, genres) {
         'use strict';
@@ -16,13 +13,11 @@ function homeCtrl($scope){
 
         $scope.filtered = function(){
             if($scope.genreFilter == null) return;
-            var words = $scope.genreFilter.toLowerCase().split(' ');
+            var re = new RegExp($scope.genreFilter, "gi");
             filtered = [];
             for(var i= 0, l=lc.length; i<l; i++) {
-                for(var a= 0, b=words.length; a<b; a++) {
-                    if(lc[i].indexOf(words[a]) >= 0) {
-                        filtered.push(lc[i]);
-                    }
+                if(re.test(lc[i])){
+                    filtered.push(lc[i]);
                 }
             }
             return filtered;
@@ -30,7 +25,7 @@ function homeCtrl($scope){
 
         function trace(str){
             $scope.$apply(function(){
-                $scope.trace.push(str);
+                $scope.trace = str;
             });
         }
 
@@ -38,21 +33,36 @@ function homeCtrl($scope){
             trace('skipping to next track because ' + trackName + ' contains naughty words');
         }
 
-        function reportGenre(artistUri) {
-            models.Artist.fromURI(artistUri).load('genres').done(function(artist) {
-                trace('genres: ' + JSON.stringify(artist.genres));
-            });
+        function getGenres(artistUri) {
+            return models.Artist.fromURI(artistUri).load('genres');
         }
 
         models.player.addEventListener('change', function(){
+            var player = this,
+                trackName = player.track.name;
 
-            if($scope.skipExplicit && this.track.explicit) {
-                reportNaughty(this.track.name);
-                this.skipToNextTrack();
+            document.getElementById("track-image").style.backgroundImage = 'url(' + player.track.imageForSize(100) + ')';
+
+            if($scope.skipExplicit && player.track.explicit) {
+                reportNaughty(trackName);
+                player.skipToNextTrack();
             }
 
             //look up the artist genre
-            reportGenre(this.track.artists[0]);
+            getGenres(player.track.artists[0]).done(function(artist){
+                $scope.$apply(function(){
+                    $scope.artistGenres = artist.genres.join(', ');
+                    $scope.trackSummary = player.track.name + ' by ' + artist.name;
+                });
+                for(var i= 0, l=artist.genres.length; i<l; i++) {
+                    var genre = artist.genres[i].toLowerCase();
+                    if(filtered.indexOf(genre) >= 0) {
+                        trace('skipping to next track because artist ' + artist.name + ' is associated with filtered genre ' + genre);
+                        player.skipToNextTrack();
+                        break;
+                    }
+                }
+            });
         });
 
         $scope.$apply();
