@@ -27,7 +27,7 @@
                     <div class="form-group">
                         <label for="explicit">Artist Genres Includes</label>
                         <input class="form-control" placeholder="Enter a regex to find genres to skip" type="text" ng-model="genreFilter" />
-                        <span class="genre btn btn-sm btn-success" ng-show="genreFilter!=null && genreFilter.length>0" ng-repeat="g in filtered()">
+                        <span class="genre btn btn-sm btn-success" ng-repeat="g in filtered">
                             {{g}}
                         </span>
                     </div>

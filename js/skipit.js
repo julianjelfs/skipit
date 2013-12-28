@@ -5,23 +5,22 @@ function homeCtrl($scope){
     require(['$api/models', 'js/genres'], function(models, genres) {
         'use strict';
 
-        var filtered = [];
         var lc = [];
         angular.forEach(genres.list, function(g){
             lc.push(g.toLowerCase());
         });
 
-        $scope.filtered = function(){
-            if($scope.genreFilter == null) return;
+        $scope.$watch('genreFilter', function(val){
+            $scope.filtered = [];
+            if($scope.genreFilter == null || $scope.genreFilter.length === 0)
+                return;
             var re = new RegExp($scope.genreFilter, "gi");
-            filtered = [];
             for(var i= 0, l=lc.length; i<l; i++) {
                 if(re.test(lc[i])){
-                    filtered.push(lc[i]);
+                    $scope.filtered.push(lc[i]);
                 }
             }
-            return filtered;
-        }
+        })
 
         function trace(str){
             $scope.$apply(function(){
@@ -56,7 +55,7 @@ function homeCtrl($scope){
                 });
                 for(var i= 0, l=artist.genres.length; i<l; i++) {
                     var genre = artist.genres[i].toLowerCase();
-                    if(filtered.indexOf(genre) >= 0) {
+                    if($scope.filtered.indexOf(genre) >= 0) {
                         trace('skipping to next track because artist ' + artist.name + ' is associated with filtered genre ' + genre);
                         player.skipToNextTrack();
                         break;
