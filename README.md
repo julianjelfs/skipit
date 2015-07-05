@@ -1,3 +1,5 @@
+##Edit - this doesn't seem to work anymore since spotify discontinued apps. Boo. Not sure if there is another way to achieve the same thing.
+
 skipit
 ======
 
